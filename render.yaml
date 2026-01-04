@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: stock-predictor-web
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.app:app --host 0.0.0.0 --port $PORT
+
+cronJobs:
+  - name: daily-data-update
+    schedule: "0 22 * * 1-5"  # Weekdays at 22:00 UTC (~5pm ET)
+    command: python scripts/cron_update_data.py
+  
+  - name: monthly-prediction
+    schedule: "0 22 1 * *"  # 1st of every month at 22:00 UTC (~5pm ET)
+    command: python scripts/cron_predict.py
+
+    # You can optionally override environment variables per job in the Render dashboard.
