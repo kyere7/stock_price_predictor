@@ -6,7 +6,7 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn backend.app:app --host 0.0.0.0 --port $PORT
 
-cronJobs:
+cron:
   - name: daily-data-update
     schedule: "0 22 * * 1-5"  # Weekdays at 22:00 UTC (~5pm ET)
     command: python scripts/cron_update_data.py
