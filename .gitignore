@@ -1,0 +1,62 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Database and secrets
+backend/database.ini
+.env
+.env.local
+*.db
+*.sqlite
+*.sqlite3
+
+# Model artifacts (large files, commit manually if needed)
+saved_models/*.joblib
+!saved_models/.gitkeep
+
+# Data files
+data/
+*.csv
+downloads/
+
+# Logs and runtime
+logs/
+*.log
+*.pot
+
+# OS
+.DS_Store
+Thumbs.db
+.directory
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Temporary files
+tmp/
+temp/
+*.tmp
