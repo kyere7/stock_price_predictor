@@ -9,16 +9,16 @@ services:
   - type: cron
     name: daily-data-update
     schedule: "0 22 * * 1-5"  # Weekdays at 22:00 UTC (~5pm ET)
-    command: python scripts/cron_update_data.py
+    startCommand: python scripts/cron_update_data.py
 
   - type: cron
     name: monthly-prediction
     schedule: "0 22 1 * *"  # 1st of every month at 22:00 UTC (~5pm ET)
-    command: python scripts/cron_predict.py
+    startCommand: python scripts/cron_predict.py
 
   - type: cron
     name: monthly-retrain
     schedule: "0 2 1 * *"  # 02:00 UTC on the 1st of every month
-    command: python scripts/retrain_all.py
+    startCommand: python scripts/retrain_all.py
 
-    # You can optionally override environment variables per job in the Render dashboard.
+# You can optionally override environment variables per job in the Render dashboard.
